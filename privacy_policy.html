@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - OmniScribe</title>
+    <title>Privacy Policy & Terms - OmniScribe</title>
     <style>
         :root {
             --bg-color: #f8f9fa;
@@ -11,8 +11,10 @@
             --text-color: #212529;
             --text-muted: #6c757d;
             --primary-color: #0070f3;
+            --primary-hover: #0056b3;
             --border-color: #e9ecef;
             --accent-bg: #eef6ff;
+            --tab-inactive-bg: #f1f3f5;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -22,8 +24,10 @@
                 --text-color: #e0e0e0;
                 --text-muted: #a0a0a0;
                 --primary-color: #4dabf7;
+                --primary-hover: #339af0;
                 --border-color: #2c2c2c;
                 --accent-bg: #1a2634;
+                --tab-inactive-bg: #2a2a2a;
             }
         }
 
@@ -37,38 +41,81 @@
         }
 
         .container {
-            max-width: 800px;
-            margin: 40px auto;
+            max-width: 850px;
+            margin: 30px auto;
             background: var(--card-bg);
-            padding: 40px;
+            padding: 35px;
             border-radius: 12px;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border-color);
         }
 
         header {
+            text-align: center;
             border-bottom: 2px solid var(--border-color);
             padding-bottom: 20px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         h1 {
             font-size: 2.2rem;
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             color: var(--primary-color);
         }
 
         .meta-info {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--text-muted);
         }
 
+        /* Tab Switcher Styles */
+        .tab-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+        }
+
+        .tab-button {
+            flex: 1;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--tab-inactive-bg);
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+            text-align: center;
+        }
+
+        .tab-button:hover {
+            color: var(--text-color);
+        }
+
+        .tab-button.active {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 112, 243, 0.25);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         h2 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             margin-top: 30px;
             margin-bottom: 15px;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 8px;
+            color: var(--text-color);
         }
 
         h3 {
@@ -78,7 +125,7 @@
         }
 
         p, li {
-            font-size: 1rem;
+            font-size: 0.98rem;
             color: var(--text-color);
         }
 
@@ -100,6 +147,7 @@
 
         .highlight-box p {
             margin: 0;
+            font-weight: 500;
         }
 
         footer {
@@ -125,98 +173,135 @@
 
 <div class="container">
     <header>
-        <h1>Privacy Policy for OmniScribe</h1>
+        <h1>OmniScribe</h1>
         <div class="meta-info">
-            <strong>Application:</strong> OmniScribe (com.tss.omniscribe)<br>
+            <strong>Package:</strong> com.tss.omniscribe &nbsp;|&nbsp; 
             <strong>Developer:</strong> Total Soft Solutions<br>
             <strong>Effective Date:</strong> September 16, 2026
         </div>
     </header>
 
-    <main>
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <button class="tab-button active" onclick="openTab(event, 'privacy')">Privacy Policy</button>
+        <button class="tab-button" onclick="openTab(event, 'terms')">Terms & Conditions</button>
+    </div>
+
+    <!-- TAB 1: PRIVACY POLICY -->
+    <main id="privacy" class="tab-content active">
         <div class="highlight-box">
-            <p><strong>Core Privacy Commitment:</strong> OmniScribe is designed with a local, privacy-focused architecture. All audio and video transcription, local translation, hardware benchmarking, and document export operations occur entirely on your local device. Your personal media files and transcripts are never uploaded to cloud transcription servers.</p>
+            <p>Core Privacy Commitment: OmniScribe uses an on-device Local AI Neural Engine. Your audio, video, transcripts, translated text, and exported files are processed locally on your device. We do not upload your media or transcripts to cloud transcription servers.</p>
         </div>
 
         <section>
             <h2>1. Overview & Architecture</h2>
-            <p>Total Soft Solutions ("we", "us", or "our") built <strong>OmniScribe</strong> as an ad-supported and privacy-conscious application. This Privacy Policy explains how data is handled when you use our mobile application.</p>
-            <p>OmniScribe operates primarily as an edge-AI processor. Unlike cloud-based transcription tools, core speech processing and text operations execute locally on your device hardware without requiring external speech-to-text servers.</p>
+            <p>Total Soft Solutions ("we", "us", or "our") developed <strong>OmniScribe</strong> as an ad-supported mobile application. This policy details how data is handled when you use our software.</p>
+            <p>OmniScribe operates as an edge-AI utility. Unlike cloud transcription apps, speech processing and document translation execute directly on your physical device hardware.</p>
         </section>
 
         <section>
-            <h2>2. On-Device Data Processing</h2>
-            <p>The following features operate exclusively on your physical Android hardware:</p>
+            <h2>2. On-Device Processing</h2>
+            <p>The following operations take place entirely on your device:</p>
             <ul>
-                <li><strong>Audio & Video Processing:</strong> Imported media files are processed locally by the app's Local AI Neural Engine to generate text transcripts. Media files never leave your device.</li>
-                <li><strong>Offline Translation:</strong> Text translation of generated transcripts is executed entirely using local translation resources on your device.</li>
-                <li><strong>Hardware Benchmarking:</strong> Local hardware tests run on your device solely to evaluate processing capabilities and recommend optimal performance settings.</li>
-                <li><strong>Document Exports:</strong> Exporting transcripts as TXT or PDF files (with optional timestamps) is performed locally. Created files are stored within your local file system or shared directly by you.</li>
-                <li><strong>History & Local Vault:</strong> Transcripts and app settings are saved inside local application storage. You can clear history or delete stored data at any time inside the app.</li>
+                <li><strong>Media Transcription:</strong> Imported audio and video recordings are processed locally by the app's neural engine. Media files never leave your device.</li>
+                <li><strong>Local Translation:</strong> Text translation of transcripts uses local on-device resources.</li>
+                <li><strong>Hardware Benchmarking:</strong> Device capability testing runs locally to suggest optimal processing parameters for your hardware.</li>
+                <li><strong>Document Export:</strong> Generating TXT or PDF files with optional timestamps is executed locally. Exported files remain under your personal control.</li>
+                <li><strong>Local History & Storage:</strong> Saved transcripts and application preferences are stored inside local application memory. You can clear history or reset app storage at any time.</li>
             </ul>
         </section>
 
         <section>
-            <h2>3. Information Collected by Third-Party Services</h2>
-            <p>To keep OmniScribe free and ensure software stability, the application integrates standard third-party software development kits (SDKs). These third-party services require network access and may collect specific non-personal or diagnostic technical data:</p>
+            <h2>3. Third-Party Services & Network Data</h2>
+            <p>To support free access and maintain application stability, OmniScribe integrates standard developer SDKs that require internet connectivity for specific non-media operational tasks:</p>
 
             <h3>A. Display & Rewarded Advertisements</h3>
-            <p>OmniScribe uses third-party advertising services (such as Google AdMob) to serve banner and rewarded advertisements. These networks may collect and use:</p>
+            <p>OmniScribe uses Google AdMob to display banner and rewarded ads. Ad networks may collect non-personal technical identifiers, including:</p>
             <ul>
-                <li>Advertising ID (GAID/AAID) and device identifiers.</li>
-                <li>IP address and approximate coarse location.</li>
-                <li>Ad interaction statistics and app performance data related to ad rendering.</li>
+                <li>Advertising ID (GAID/AAID) and device hardware specs.</li>
+                <li>Approximate IP-based location and ad interaction analytics.</li>
             </ul>
 
-            <h3>B. Crash Reporting & Diagnostics</h3>
-            <p>We use <strong>Firebase Crashlytics</strong> to identify software bugs and prevent application crashes. In the event of an unexpected error, Firebase Crashlytics automatically collects anonymized diagnostic logs, including:</p>
-            <ul>
-                <li>Device model, operating system version, and system state at the time of the crash.</li>
-                <li>Stack traces, memory usage, and execution logs leading up to the error.</li>
-            </ul>
-            <p><em>Note: Crash reports do NOT contain your imported audio/video media files or the content of your text transcripts.</em></p>
+            <h3>B. Anonymized Crash Reporting</h3>
+            <p>We use <strong>Firebase Crashlytics</strong> to diagnose bugs. In the event of an application crash, diagnostic data is collected, including stack traces, device model, and OS version. <em>Crash reports never contain your media files or transcript text.</em></p>
         </section>
 
         <section>
-            <h2>4. Third-Party Service Provider Policies</h2>
-            <p>For detailed information on how our integrated service providers handle network data, please refer to their respective privacy policies:</p>
+            <h2>4. Third-Party Service Links</h2>
             <ul>
                 <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services & AdMob Privacy Policy</a></li>
-                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Firebase Crashlytics Privacy Policy</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Crashlytics Privacy Policy</a></li>
             </ul>
         </section>
 
         <section>
-            <h2>5. Data Control & Deletion</h2>
-            <p>You maintain full control over all personal data generated within OmniScribe:</p>
+            <h2>5. Data Retention & Control</h2>
+            <p>You can clear your local history and deleted data within the app settings. Uninstalling OmniScribe permanently wipes all local databases, saved transcripts, and cached configuration data from your phone.</p>
+        </section>
+
+        <section>
+            <h2>6. Contact Us</h2>
+            <p>For questions regarding this Privacy Policy, contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a></p>
+        </section>
+    </main>
+
+    <!-- TAB 2: TERMS & CONDITIONS -->
+    <main id="terms" class="tab-content">
+        <div class="highlight-box">
+            <p>By downloading, installing, or using OmniScribe, you agree to be bound by these Terms & Conditions. Please read them carefully before using the app.</p>
+        </div>
+
+        <section>
+            <h2>1. Acceptable Use & License</h2>
+            <p>Total Soft Solutions grants you a personal, non-exclusive, non-transferable, revocable license to use OmniScribe for personal or internal business purposes in accordance with these Terms.</p>
+            <p>You agree not to modify, reverse-engineer, decompile, or attempt to extract source code from the application, except as permitted by applicable law.</p>
+        </section>
+
+        <section>
+            <h2>2. AI Accuracy & Output Disclaimer</h2>
+            <p>OmniScribe uses automated on-device artificial intelligence to convert speech to text and translate language. You acknowledge and agree that:</p>
             <ul>
-                <li><strong>In-App Clearing:</strong> You can clear your transcription history or reset app resources at any time via the application settings menu.</li>
-                <li><strong>Device Removal:</strong> Uninstalling OmniScribe permanently deletes all local app database records, saved transcripts, and internal app resources from your device.</li>
+                <li>AI transcriptions and translations are automated and may contain errors or inaccuracies depending on audio clarity, background noise, accents, and device hardware settings.</li>
+                <li>Outputs should be reviewed by human eyes before being relied upon for legal, medical, financial, or critical documentation.</li>
+                <li>Total Soft Solutions is not liable for errors, omissions, or misinterpretations in AI-generated output.</li>
             </ul>
         </section>
 
         <section>
-            <h2>6. Security</h2>
-            <p>We prioritize keeping your media and transcripts private. Because processing occurs on your physical device, your data is protected by your device's built-in security controls. Any network communication required by third-party advertising or diagnostic SDKs is encrypted in transit using industry-standard Transport Layer Security (TLS/HTTPS).</p>
+            <h2>3. User Responsibilities & Copyright</h2>
+            <p>You are solely responsible for the audio and video media files you import into OmniScribe. You affirm that you own or have obtained the necessary rights, permissions, and consents to transcribe and translate any imported media files under applicable recording and privacy laws.</p>
         </section>
 
         <section>
-            <h2>7. Children's Privacy</h2>
-            <p>OmniScribe does not knowingly collect or solicit personal information from children under the age of 13. If you believe a child has provided personal information through third-party services integrated into our app, please contact us so we can take steps to remove such information.</p>
+            <h2>4. File Storage & User Ownership</h2>
+            <p>All transcripts, exported TXT/PDF files, and local database entries remain your property. Because file processing and export storage are entirely local, Total Soft Solutions does not maintain remote backups of your transcripts. You are responsible for backing up your exported files.</p>
         </section>
 
         <section>
-            <h2>8. Changes to This Privacy Policy</h2>
-            <p>We may update our Privacy Policy from time to time to reflect app updates or regulatory adjustments. Any changes will be posted on this page with an updated effective date. We encourage you to review this page periodically.</p>
+            <h2>5. Third-Party Services & Ads</h2>
+            <p>The app displays advertisements served by third-party ad networks (Google AdMob). We are not responsible for the content, products, or services offered in third-party advertisements displayed within the app.</p>
+        </section>
+
+        <section>
+            <h2>6. Disclaimer of Warranties</h2>
+            <p>OmniScribe is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+        </section>
+
+        <section>
+            <h2>7. Limitation of Liability</h2>
+            <p>To the maximum extent permitted by applicable law, Total Soft Solutions shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, audio files, or transcripts resulting from your use of or inability to use the application.</p>
+        </section>
+
+        <section>
+            <h2>8. Changes to Terms</h2>
+            <p>We reserve the right to modify these Terms at any time. Continued use of OmniScribe following any updates constitutes acceptance of the revised Terms.</p>
         </section>
 
         <section>
             <h2>9. Contact Us</h2>
-            <p>If you have any questions, suggestions, or privacy concerns regarding OmniScribe, please contact us at:</p>
-            <p>
-                <strong>Developer:</strong> Total Soft Solutions<br>
-                <strong>Support Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a>
-            </p>
+            <p>If you have any questions regarding these Terms & Conditions, please contact us at:</p>
+            <p><strong>Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a></p>
         </section>
     </main>
 
@@ -224,6 +309,26 @@
         &copy; 2026 Total Soft Solutions. All rights reserved.
     </footer>
 </div>
+
+<script>
+    function openTab(evt, tabName) {
+        // Hide all tab contents
+        const tabContent = document.getElementsByClassName("tab-content");
+        for (let i = 0; i < tabContent.length; i++) {
+            tabContent[i].classList.remove("active");
+        }
+
+        // Deactivate all tab buttons
+        const tabButtons = document.getElementsByClassName("tab-button");
+        for (let i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].classList.remove("active");
+        }
+
+        // Show specific tab and mark button as active
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+    }
+</script>
 
 </body>
 </html>

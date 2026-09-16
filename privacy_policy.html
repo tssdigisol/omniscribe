@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - OmniScribe</title>
+    <style>
+        :root {
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-color: #212529;
+            --text-muted: #6c757d;
+            --primary-color: #0070f3;
+            --border-color: #e9ecef;
+            --accent-bg: #eef6ff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #121212;
+                --card-bg: #1e1e1e;
+                --text-color: #e0e0e0;
+                --text-muted: #a0a0a0;
+                --primary-color: #4dabf7;
+                --border-color: #2c2c2c;
+                --accent-bg: #1a2634;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 0 0 10px 0;
+            color: var(--primary-color);
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .highlight-box {
+            background-color: var(--accent-bg);
+            border-left: 4px solid var(--primary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Privacy Policy for OmniScribe</h1>
+        <div class="meta-info">
+            <strong>Application:</strong> OmniScribe (com.tss.omniscribe)<br>
+            <strong>Developer:</strong> Total Soft Solutions<br>
+            <strong>Effective Date:</strong> September 16, 2026
+        </div>
+    </header>
+
+    <main>
+        <div class="highlight-box">
+            <p><strong>Core Privacy Commitment:</strong> OmniScribe is designed with a local, privacy-focused architecture. All audio and video transcription, local translation, hardware benchmarking, and document export operations occur entirely on your local device. Your personal media files and transcripts are never uploaded to cloud transcription servers.</p>
+        </div>
+
+        <section>
+            <h2>1. Overview & Architecture</h2>
+            <p>Total Soft Solutions ("we", "us", or "our") built <strong>OmniScribe</strong> as an ad-supported and privacy-conscious application. This Privacy Policy explains how data is handled when you use our mobile application.</p>
+            <p>OmniScribe operates primarily as an edge-AI processor. Unlike cloud-based transcription tools, core speech processing and text operations execute locally on your device hardware without requiring external speech-to-text servers.</p>
+        </section>
+
+        <section>
+            <h2>2. On-Device Data Processing</h2>
+            <p>The following features operate exclusively on your physical Android hardware:</p>
+            <ul>
+                <li><strong>Audio & Video Processing:</strong> Imported media files are processed locally by the app's Local AI Neural Engine to generate text transcripts. Media files never leave your device.</li>
+                <li><strong>Offline Translation:</strong> Text translation of generated transcripts is executed entirely using local translation resources on your device.</li>
+                <li><strong>Hardware Benchmarking:</strong> Local hardware tests run on your device solely to evaluate processing capabilities and recommend optimal performance settings.</li>
+                <li><strong>Document Exports:</strong> Exporting transcripts as TXT or PDF files (with optional timestamps) is performed locally. Created files are stored within your local file system or shared directly by you.</li>
+                <li><strong>History & Local Vault:</strong> Transcripts and app settings are saved inside local application storage. You can clear history or delete stored data at any time inside the app.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>3. Information Collected by Third-Party Services</h2>
+            <p>To keep OmniScribe free and ensure software stability, the application integrates standard third-party software development kits (SDKs). These third-party services require network access and may collect specific non-personal or diagnostic technical data:</p>
+
+            <h3>A. Display & Rewarded Advertisements</h3>
+            <p>OmniScribe uses third-party advertising services (such as Google AdMob) to serve banner and rewarded advertisements. These networks may collect and use:</p>
+            <ul>
+                <li>Advertising ID (GAID/AAID) and device identifiers.</li>
+                <li>IP address and approximate coarse location.</li>
+                <li>Ad interaction statistics and app performance data related to ad rendering.</li>
+            </ul>
+
+            <h3>B. Crash Reporting & Diagnostics</h3>
+            <p>We use <strong>Firebase Crashlytics</strong> to identify software bugs and prevent application crashes. In the event of an unexpected error, Firebase Crashlytics automatically collects anonymized diagnostic logs, including:</p>
+            <ul>
+                <li>Device model, operating system version, and system state at the time of the crash.</li>
+                <li>Stack traces, memory usage, and execution logs leading up to the error.</li>
+            </ul>
+            <p><em>Note: Crash reports do NOT contain your imported audio/video media files or the content of your text transcripts.</em></p>
+        </section>
+
+        <section>
+            <h2>4. Third-Party Service Provider Policies</h2>
+            <p>For detailed information on how our integrated service providers handle network data, please refer to their respective privacy policies:</p>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services & AdMob Privacy Policy</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Google Firebase Crashlytics Privacy Policy</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>5. Data Control & Deletion</h2>
+            <p>You maintain full control over all personal data generated within OmniScribe:</p>
+            <ul>
+                <li><strong>In-App Clearing:</strong> You can clear your transcription history or reset app resources at any time via the application settings menu.</li>
+                <li><strong>Device Removal:</strong> Uninstalling OmniScribe permanently deletes all local app database records, saved transcripts, and internal app resources from your device.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>6. Security</h2>
+            <p>We prioritize keeping your media and transcripts private. Because processing occurs on your physical device, your data is protected by your device's built-in security controls. Any network communication required by third-party advertising or diagnostic SDKs is encrypted in transit using industry-standard Transport Layer Security (TLS/HTTPS).</p>
+        </section>
+
+        <section>
+            <h2>7. Children's Privacy</h2>
+            <p>OmniScribe does not knowingly collect or solicit personal information from children under the age of 13. If you believe a child has provided personal information through third-party services integrated into our app, please contact us so we can take steps to remove such information.</p>
+        </section>
+
+        <section>
+            <h2>8. Changes to This Privacy Policy</h2>
+            <p>We may update our Privacy Policy from time to time to reflect app updates or regulatory adjustments. Any changes will be posted on this page with an updated effective date. We encourage you to review this page periodically.</p>
+        </section>
+
+        <section>
+            <h2>9. Contact Us</h2>
+            <p>If you have any questions, suggestions, or privacy concerns regarding OmniScribe, please contact us at:</p>
+            <p>
+                <strong>Developer:</strong> Total Soft Solutions<br>
+                <strong>Support Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a>
+            </p>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2026 Total Soft Solutions. All rights reserved.
+    </footer>
+</div>
+
+</body>
+</html>

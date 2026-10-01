@@ -50,6 +50,12 @@
             border: 1px solid var(--border-color);
         }
 
+        @media (max-width: 600px) {
+            body { padding: 12px; }
+            .container { padding: 20px; margin: 10px auto; }
+            h1 { font-size: 1.8rem; }
+        }
+
         header {
             text-align: center;
             border-bottom: 2px solid var(--border-color);
@@ -137,6 +143,28 @@
             margin-bottom: 8px;
         }
 
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 0.92rem;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        th {
+            background-color: var(--tab-inactive-bg);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
         .highlight-box {
             background-color: var(--accent-bg);
             border-left: 4px solid var(--primary-color);
@@ -175,9 +203,9 @@
     <header>
         <h1>OmniScribe</h1>
         <div class="meta-info">
-            <strong>Package:</strong> com.tss.omniscribe &nbsp;|&nbsp; 
+            <strong>Package:</strong> com.tss.omniscribe &nbsp;|&nbsp;
             <strong>Developer:</strong> Total Soft Solutions<br>
-            <strong>Effective Date:</strong> September 16, 2026
+            <strong>Effective Date:</strong> October 1, 2026
         </div>
     </header>
 
@@ -190,58 +218,142 @@
     <!-- TAB 1: PRIVACY POLICY -->
     <main id="privacy" class="tab-content active">
         <div class="highlight-box">
-            <p>Core Privacy Commitment: OmniScribe uses an on-device Local AI Neural Engine. Your audio, video, transcripts, translated text, and exported files are processed locally on your device. We do not upload your media or transcripts to cloud transcription servers.</p>
+            <p>Core Privacy Commitment: OmniScribe uses an on-device Local AI Neural Engine. Your audio, video, transcripts, translated text, and exported files are processed locally on your device. We never upload your media or transcripts to any server, and we never receive them.</p>
         </div>
 
         <section>
-            <h2>1. Overview & Architecture</h2>
-            <p>Total Soft Solutions ("we", "us", or "our") developed <strong>OmniScribe</strong> as an ad-supported mobile application. This policy details how data is handled when you use our software.</p>
-            <p>OmniScribe operates as an edge-AI utility. Unlike cloud transcription apps, speech processing and document translation execute directly on your physical device hardware.</p>
+            <h2>1. Overview</h2>
+            <p>Total Soft Solutions ("we", "us", or "our") developed <strong>OmniScribe</strong>, an on-device AI transcription and translation app. OmniScribe is free to use with advertisements, and offers an optional paid upgrade (<strong>OmniScribe Pro</strong>) that removes ads.</p>
+            <p>This policy explains what information is processed on your device, what limited technical data is handled by third-party services the app relies on, and the choices you have.</p>
         </section>
 
         <section>
-            <h2>2. On-Device Processing</h2>
-            <p>The following operations take place entirely on your device:</p>
+            <h2>2. On-Device Processing (Your Content)</h2>
+            <p>The following operations take place entirely on your device. The content involved never leaves your phone:</p>
             <ul>
-                <li><strong>Media Transcription:</strong> Imported audio and video recordings are processed locally by the app's neural engine. Media files never leave your device.</li>
-                <li><strong>Local Translation:</strong> Text translation of transcripts uses local on-device resources.</li>
-                <li><strong>Hardware Benchmarking:</strong> Device capability testing runs locally to suggest optimal processing parameters for your hardware.</li>
-                <li><strong>Document Export:</strong> Generating TXT or PDF files with optional timestamps is executed locally. Exported files remain under your personal control.</li>
-                <li><strong>Local History & Storage:</strong> Saved transcripts and application preferences are stored inside local application memory. You can clear history or reset app storage at any time.</li>
+                <li><strong>Media Transcription:</strong> Audio and video files you choose are converted to text locally by the app's neural engine. Media files are read only from the files you select and are never uploaded.</li>
+                <li><strong>Offline Translation:</strong> Transcript translation and language detection run on-device using Google ML Kit. Your text is not sent to Google or anyone else.</li>
+                <li><strong>Hardware Benchmarking:</strong> Device capability tests run locally to recommend a suitable AI model for your phone.</li>
+                <li><strong>Document Export:</strong> TXT and PDF files are generated locally and saved where you choose. Exported files remain under your control.</li>
+                <li><strong>Local History & Settings:</strong> Saved transcripts, processing statistics, and app preferences are stored in the app's private storage on your device.</li>
+            </ul>
+            <p>OmniScribe does <strong>not</strong> request microphone, camera, contacts, or precise location permissions.</p>
+        </section>
+
+        <section>
+            <h2>3. Downloads the App Makes</h2>
+            <p>Some features require a one-time download. These downloads send only standard technical request information (such as your IP address and device/network details needed to deliver the file). <strong>No audio, video, or transcript content is ever sent.</strong></p>
+            <ul>
+                <li><strong>AI Models:</strong> Transcription models are downloaded on your request from <strong>Hugging Face</strong> (huggingface.co), a third-party model-hosting service, using Android's system download manager. Once downloaded, models run fully offline.</li>
+                <li><strong>Translation Language Packs:</strong> When you first translate into a language, Google ML Kit downloads that language pack from Google servers. After that, translation into that language works offline.</li>
             </ul>
         </section>
 
         <section>
-            <h2>3. Third-Party Services & Network Data</h2>
-            <p>To support free access and maintain application stability, OmniScribe integrates standard developer SDKs that require internet connectivity for specific non-media operational tasks:</p>
+            <h2>4. Third-Party Services & Data Collected</h2>
+            <p>To keep OmniScribe free and stable, the app uses the following Google services. They collect limited technical data, never your media or transcripts:</p>
 
-            <h3>A. Display & Rewarded Advertisements</h3>
-            <p>OmniScribe uses Google AdMob to display banner and rewarded ads. Ad networks may collect non-personal technical identifiers, including:</p>
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Service</th>
+                            <th>Purpose</th>
+                            <th>Data Collected</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Google AdMob</td>
+                            <td>Banner and optional rewarded ads (free users only)</td>
+                            <td>Advertising ID, device and app information, approximate location derived from IP address, ad interactions</td>
+                        </tr>
+                        <tr>
+                            <td>Firebase Analytics</td>
+                            <td>Understanding feature usage to improve the app</td>
+                            <td>App usage events (e.g. screens opened, features used), app instance ID, device model, OS version, approximate location derived from IP address</td>
+                        </tr>
+                        <tr>
+                            <td>Firebase Crashlytics</td>
+                            <td>Diagnosing crashes and bugs</td>
+                            <td>Crash stack traces, device model, OS version, app version, crash-related identifiers</td>
+                        </tr>
+                        <tr>
+                            <td>Google Play Billing</td>
+                            <td>Processing OmniScribe Pro purchases</td>
+                            <td>Purchase status and purchase token. Payment details are handled entirely by Google Play; we never see your card or payment information.</td>
+                        </tr>
+                        <tr>
+                            <td>Google User Messaging Platform</td>
+                            <td>Showing ad-consent choices where required by law</td>
+                            <td>Your consent choices and region-related information</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <p>Data collected by these services is encrypted in transit. We do not sell your personal data. Data is shared with Google only as needed to provide the services above, under Google's own privacy policies.</p>
+        </section>
+
+        <section>
+            <h2>5. Advertising Choices & Consent</h2>
             <ul>
-                <li>Advertising ID (GAID/AAID) and device hardware specs.</li>
-                <li>Approximate IP-based location and ad interaction analytics.</li>
+                <li><strong>Consent (EEA, UK, Switzerland and other applicable regions):</strong> Where required, OmniScribe asks for your consent before personalized ads are shown. You can change your choice at any time in <em>Settings &rsaquo; Ad privacy choices</em> inside the app.</li>
+                <li><strong>Rewarded ads are optional:</strong> You choose whether to watch an ad before starting a transcription. You can upgrade to Pro to remove ads entirely.</li>
+                <li><strong>Advertising ID:</strong> You can reset or delete your Advertising ID, or opt out of ad personalization, in your device settings (Settings &rsaquo; Google &rsaquo; Ads, or Settings &rsaquo; Privacy &rsaquo; Ads on some devices).</li>
+                <li><strong>Pro users:</strong> Ads are not requested for OmniScribe Pro users.</li>
             </ul>
-
-            <h3>B. Anonymized Crash Reporting</h3>
-            <p>We use <strong>Firebase Crashlytics</strong> to diagnose bugs. In the event of an application crash, diagnostic data is collected, including stack traces, device model, and OS version. <em>Crash reports never contain your media files or transcript text.</em></p>
         </section>
 
         <section>
-            <h2>4. Third-Party Service Links</h2>
+            <h2>6. Permissions Used</h2>
             <ul>
-                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Play Services & AdMob Privacy Policy</a></li>
-                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Crashlytics Privacy Policy</a></li>
+                <li><strong>Internet & network state:</strong> Downloading AI models and translation packs, ads, analytics, crash reports, and purchases.</li>
+                <li><strong>Notifications:</strong> Showing progress of long transcriptions and downloads.</li>
+                <li><strong>Foreground service & wake lock:</strong> Letting a transcription finish while the screen is off or the app is in the background.</li>
+                <li><strong>Storage (Android 9 only):</strong> Saving exported files on older devices.</li>
+                <li><strong>Billing:</strong> Enabling in-app purchases through Google Play.</li>
             </ul>
         </section>
 
         <section>
-            <h2>5. Data Retention & Control</h2>
-            <p>You can clear your local history and deleted data within the app settings. Uninstalling OmniScribe permanently wipes all local databases, saved transcripts, and cached configuration data from your phone.</p>
+            <h2>7. Device Backup</h2>
+            <p>If Android backup is enabled on your device, your app settings and transcript history may be included in your personal Google account backup, managed by Android and Google. Downloaded AI models are excluded from backups. You can turn off backup in your device settings.</p>
         </section>
 
         <section>
-            <h2>6. Contact Us</h2>
-            <p>For questions regarding this Privacy Policy, contact us at:</p>
+            <h2>8. Data Retention & Deletion</h2>
+            <ul>
+                <li><strong>Your content:</strong> Clear transcript history at any time in the app (Settings or History). Uninstalling OmniScribe permanently deletes all local data, transcripts, and downloaded models from your device.</li>
+                <li><strong>Analytics and crash data:</strong> Retained by Google according to Firebase's standard retention periods. To request deletion of analytics data associated with your app installation, contact us at the email below.</li>
+                <li><strong>Purchase records:</strong> Kept by Google Play as part of your Google account purchase history.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>9. Children's Privacy</h2>
+            <p>OmniScribe is not directed at children under 13, and we do not knowingly collect personal information from children. If you believe a child has provided information through the app, please contact us and we will help remove it.</p>
+        </section>
+
+        <section>
+            <h2>10. Changes to This Policy</h2>
+            <p>We may update this policy from time to time. The "Effective Date" at the top shows when it was last changed. Significant changes will be reflected in the app's store listing or within the app.</p>
+        </section>
+
+        <section>
+            <h2>11. Third-Party Policies</h2>
+            <ul>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy (AdMob, Google Play)</a></li>
+                <li><a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener noreferrer">How Google uses information from apps that use its services</a></li>
+                <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy & Security</a></li>
+                <li><a href="https://developers.google.com/ml-kit/terms" target="_blank" rel="noopener noreferrer">Google ML Kit Terms</a></li>
+                <li><a href="https://huggingface.co/privacy" target="_blank" rel="noopener noreferrer">Hugging Face Privacy Policy</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>12. Contact Us</h2>
+            <p>For questions or data requests regarding this Privacy Policy, contact us at:</p>
             <p><strong>Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a></p>
         </section>
     </main>
@@ -262,44 +374,57 @@
             <h2>2. AI Accuracy & Output Disclaimer</h2>
             <p>OmniScribe uses automated on-device artificial intelligence to convert speech to text and translate language. You acknowledge and agree that:</p>
             <ul>
-                <li>AI transcriptions and translations are automated and may contain errors or inaccuracies depending on audio clarity, background noise, accents, and device hardware settings.</li>
-                <li>Outputs should be reviewed by human eyes before being relied upon for legal, medical, financial, or critical documentation.</li>
+                <li>AI transcriptions and translations are automated and may contain errors or inaccuracies depending on audio clarity, background noise, accents, the selected AI model, and device hardware.</li>
+                <li>Outputs should be reviewed by a person before being relied upon for legal, medical, financial, or other critical documentation.</li>
                 <li>Total Soft Solutions is not liable for errors, omissions, or misinterpretations in AI-generated output.</li>
             </ul>
         </section>
 
         <section>
             <h2>3. User Responsibilities & Copyright</h2>
-            <p>You are solely responsible for the audio and video media files you import into OmniScribe. You affirm that you own or have obtained the necessary rights, permissions, and consents to transcribe and translate any imported media files under applicable recording and privacy laws.</p>
+            <p>You are solely responsible for the audio and video files you import into OmniScribe. You confirm that you own or have obtained the necessary rights, permissions, and consents to transcribe and translate any imported media under applicable recording, copyright, and privacy laws.</p>
         </section>
 
         <section>
             <h2>4. File Storage & User Ownership</h2>
-            <p>All transcripts, exported TXT/PDF files, and local database entries remain your property. Because file processing and export storage are entirely local, Total Soft Solutions does not maintain remote backups of your transcripts. You are responsible for backing up your exported files.</p>
+            <p>All transcripts, exported TXT/PDF files, and local history entries remain your property. Because processing and storage are local, Total Soft Solutions does not keep copies or remote backups of your transcripts. You are responsible for backing up your exported files.</p>
         </section>
 
         <section>
-            <h2>5. Third-Party Services & Ads</h2>
-            <p>The app displays advertisements served by third-party ad networks (Google AdMob). We are not responsible for the content, products, or services offered in third-party advertisements displayed within the app.</p>
+            <h2>5. OmniScribe Pro, Subscriptions & Payments</h2>
+            <ul>
+                <li><strong>Plans:</strong> OmniScribe Pro is available as a yearly subscription or a one-time lifetime purchase. Prices are shown in the app in your local currency before you buy.</li>
+                <li><strong>Billing:</strong> All payments are processed by Google Play and charged to your Google account.</li>
+                <li><strong>Auto-renewal:</strong> The yearly subscription renews automatically at the end of each billing period unless cancelled at least 24 hours before renewal.</li>
+                <li><strong>Cancellation:</strong> You can cancel anytime in Google Play &rsaquo; Payments &amp; subscriptions &rsaquo; Subscriptions, or from <em>Settings &rsaquo; Manage subscription</em> in the app. Pro features remain active until the end of the paid period.</li>
+                <li><strong>Lifetime purchase:</strong> A single payment that unlocks Pro for as long as the app is offered, on any device signed in to the same Google account.</li>
+                <li><strong>Refunds:</strong> Refunds are handled under Google Play's refund policy. You may also contact us for help.</li>
+                <li><strong>Restore:</strong> Use <em>Restore purchases</em> in the app after reinstalling or switching devices.</li>
+            </ul>
         </section>
 
         <section>
-            <h2>6. Disclaimer of Warranties</h2>
-            <p>OmniScribe is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+            <h2>6. Third-Party Services & Ads</h2>
+            <p>Free versions of the app display advertisements served by third-party ad networks (Google AdMob). We are not responsible for the content, products, or services offered in third-party advertisements. AI models and translation packs are provided by third parties and are subject to their own licenses.</p>
         </section>
 
         <section>
-            <h2>7. Limitation of Liability</h2>
+            <h2>7. Disclaimer of Warranties</h2>
+            <p>OmniScribe is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, either express or implied, including but not limited to implied warranties of merchantability, fitness for a particular purpose, or non-infringement. Performance depends on your device's hardware and available memory.</p>
+        </section>
+
+        <section>
+            <h2>8. Limitation of Liability</h2>
             <p>To the maximum extent permitted by applicable law, Total Soft Solutions shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of data, audio files, or transcripts resulting from your use of or inability to use the application.</p>
         </section>
 
         <section>
-            <h2>8. Changes to Terms</h2>
-            <p>We reserve the right to modify these Terms at any time. Continued use of OmniScribe following any updates constitutes acceptance of the revised Terms.</p>
+            <h2>9. Changes to Terms</h2>
+            <p>We may modify these Terms at any time. Continued use of OmniScribe after an update constitutes acceptance of the revised Terms.</p>
         </section>
 
         <section>
-            <h2>9. Contact Us</h2>
+            <h2>10. Contact Us</h2>
             <p>If you have any questions regarding these Terms & Conditions, please contact us at:</p>
             <p><strong>Email:</strong> <a href="mailto:tssdigisol@gmail.com">tssdigisol@gmail.com</a></p>
         </section>
@@ -312,21 +437,23 @@
 
 <script>
     function openTab(evt, tabName) {
-        // Hide all tab contents
         const tabContent = document.getElementsByClassName("tab-content");
         for (let i = 0; i < tabContent.length; i++) {
             tabContent[i].classList.remove("active");
         }
 
-        // Deactivate all tab buttons
         const tabButtons = document.getElementsByClassName("tab-button");
         for (let i = 0; i < tabButtons.length; i++) {
             tabButtons[i].classList.remove("active");
         }
 
-        // Show specific tab and mark button as active
         document.getElementById(tabName).classList.add("active");
         evt.currentTarget.classList.add("active");
+    }
+
+    // Allow direct links: privacy_policy.html#terms opens the Terms tab
+    if (location.hash === "#terms") {
+        document.querySelector('.tab-button:nth-child(2)').click();
     }
 </script>
 
